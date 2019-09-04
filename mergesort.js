@@ -28,31 +28,9 @@ function merge (arr1, arr2){
     return mergedArr;
   }
 
-function mergesort(arr){
-
-// step 1 recursive Splitting 
-//take array and split until each subarray element length is 1
-
-    split(arr) 
-    const firstHalf = split(arr)[0] 
-    const secondHalf = split(arr)[1]
-
-    split(firstHalf)
-    const firstHalf = split(firstHalf)[0]
-    const secondHalf = split(firstHalf)[1]
-    split(secondHalf)
-    const firstHalf = split (secondHalf)[0]
-    const secondHalf = split (secondHalf)[1]
-
-
-
-    if (arr[0].length === 1) return arr;
-    else {
-      
-      const newArr = split(arr)
-      return split(...newArr)
-    }
-     
-//step 2 recursive Merging
-    
-}
+function mergeSort(arr){
+    if (arr.length < 2) return arr;
+    const firstHalf = mergeSort(split(arr)[0])
+    const secondHalf = mergeSort(split(arr)[1])
+    return merge(firstHalf, secondHalf)
+  }
